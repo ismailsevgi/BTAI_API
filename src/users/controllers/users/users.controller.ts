@@ -7,8 +7,6 @@ import { User } from '../../interfaces/user.interface';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  //Body'den gelen json datası createUserDto ile aynı olmak zorunda.
-  //Gelen datanın modeli dto ile eş ise servise gönderiliyor.
   @Post()
   async create(@Body() createUserDto: CreateUserDto) {
     return this.usersService.create(createUserDto);
